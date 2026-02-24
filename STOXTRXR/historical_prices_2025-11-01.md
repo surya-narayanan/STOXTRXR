@@ -4,83 +4,83 @@ Nearest trading day on or before the target date is used.
 
 | Ticker | Date Used | Close Price | Error |
 | --- | --- | --- | --- |
-| LITX |  |  | fetch failed |
-| SMCI |  |  | fetch failed |
-| AAOI |  |  | fetch failed |
-| LITE |  |  | fetch failed |
-| NBIS |  |  | fetch failed |
-| SNXX |  |  | fetch failed |
-| TTMI |  |  | fetch failed |
-| AEHR |  |  | fetch failed |
-| AMKR |  |  | fetch failed |
-| SNDK |  |  | fetch failed |
-| SMSMTY |  |  | fetch failed |
-| EWY |  |  | fetch failed |
-| UCTT |  |  | fetch failed |
-| CIEN |  |  | fetch failed |
-| ALAB |  |  | fetch failed |
-| KLIC |  |  | fetch failed |
-| ORCL |  |  | fetch failed |
-| COHR |  |  | fetch failed |
-| AVGO |  |  | fetch failed |
-| APH |  |  | fetch failed |
-| CSCO |  |  | fetch failed |
-| GOOGL |  |  | fetch failed |
-| GOOG |  |  | fetch failed |
-| SERV |  |  | fetch failed |
-| ONTO |  |  | fetch failed |
-| AMD |  |  | fetch failed |
-| NET |  |  | fetch failed |
-| IREN |  |  | fetch failed |
-| SFTBY |  |  | fetch failed |
-| FN |  |  | fetch failed |
-| SKYT |  |  | fetch failed |
-| CRDO |  |  | fetch failed |
-| MBLY |  |  | fetch failed |
-| VRT |  |  | fetch failed |
-| AMZN |  |  | fetch failed |
-| ACMR |  |  | fetch failed |
-| TER |  |  | fetch failed |
-| DT |  |  | fetch failed |
-| CRWV |  |  | fetch failed |
-| TOELY |  |  | fetch failed |
-| KEYS |  |  | fetch failed |
-| ENTG |  |  | fetch failed |
-| AAPL |  |  | fetch failed |
-| AMAT |  |  | fetch failed |
-| TSM |  |  | fetch failed |
-| VNET |  |  | fetch failed |
-| NVDA |  |  | fetch failed |
-| COHU |  |  | fetch failed |
-| SNPS |  |  | fetch failed |
-| VECO |  |  | fetch failed |
-| TEL |  |  | fetch failed |
-| MTSI |  |  | fetch failed |
-| UMC |  |  | fetch failed |
-| KLAC |  |  | fetch failed |
-| ASML |  |  | fetch failed |
-| GFS |  |  | fetch failed |
-| DOCN |  |  | fetch failed |
-| ASX |  |  | fetch failed |
-| MU |  |  | fetch failed |
-| ACLS |  |  | fetch failed |
-| INTC |  |  | fetch failed |
-| ARM |  |  | fetch failed |
-| ASYS |  |  | fetch failed |
-| APLD |  |  | fetch failed |
-| ICHR |  |  | fetch failed |
-| ANET |  |  | fetch failed |
-| CC |  |  | fetch failed |
-| NVMI |  |  | fetch failed |
-| LRCX |  |  | fetch failed |
-| SMTC |  |  | fetch failed |
-| TSEM |  |  | fetch failed |
-| FORM |  |  | fetch failed |
-| SYNA |  |  | fetch failed |
-| CAMT |  |  | fetch failed |
-| SITM |  |  | fetch failed |
-| WDC |  |  | fetch failed |
-| ON |  |  | fetch failed |
-| STX |  |  | fetch failed |
-| WDCX |  |  | fetch failed |
-| BTDR |  |  | fetch failed |
+| LITX |  |  | Rate limit reached. Skipped. |
+| SMCI |  |  | Rate limit reached. Skipped. |
+| AAOI |  |  | Rate limit reached. Skipped. |
+| LITE |  |  | Rate limit reached. Skipped. |
+| NBIS |  |  | Rate limit reached. Skipped. |
+| SNXX |  |  | Rate limit reached. Skipped. |
+| TTMI |  |  | Rate limit reached. Skipped. |
+| AEHR |  |  | Rate limit reached. Skipped. |
+| AMKR |  |  | Rate limit reached. Skipped. |
+| SNDK |  |  | Rate limit reached. Skipped. |
+| SMSMTY |  |  | Rate limit reached. Skipped. |
+| EWY |  |  | Rate limit reached. Skipped. |
+| UCTT |  |  | Rate limit reached. Skipped. |
+| CIEN |  |  | Rate limit reached. Skipped. |
+| ALAB |  |  | Rate limit reached. Skipped. |
+| KLIC |  |  | Rate limit reached. Skipped. |
+| ORCL |  |  | Rate limit reached. Skipped. |
+| COHR |  |  | Rate limit reached. Skipped. |
+| AVGO |  |  | Rate limit reached. Skipped. |
+| APH |  |  | Rate limit reached. Skipped. |
+| CSCO |  |  | Rate limit reached. Skipped. |
+| GOOGL |  |  | Rate limit reached. Skipped. |
+| GOOG |  |  | Rate limit reached. Skipped. |
+| SERV |  |  | Rate limit reached. Skipped. |
+| ONTO |  |  | Rate limit reached. Skipped. |
+| AMD |  |  | Rate limit reached. Skipped. |
+| NET |  |  | Rate limit reached. Skipped. |
+| IREN |  |  | Rate limit reached. Skipped. |
+| SFTBY |  |  | Rate limit reached. Skipped. |
+| FN |  |  | Rate limit reached. Skipped. |
+| SKYT |  |  | Rate limit reached. Skipped. |
+| CRDO |  |  | Rate limit reached. Skipped. |
+| MBLY |  |  | Rate limit reached. Skipped. |
+| VRT |  |  | Rate limit reached. Skipped. |
+| AMZN |  |  | Rate limit reached. Skipped. |
+| ACMR |  |  | Rate limit reached. Skipped. |
+| TER |  |  | Rate limit reached. Skipped. |
+| DT |  |  | Rate limit reached. Skipped. |
+| CRWV |  |  | Rate limit reached. Skipped. |
+| TOELY |  |  | Rate limit reached. Skipped. |
+| KEYS |  |  | Rate limit reached. Skipped. |
+| ENTG |  |  | Rate limit reached. Skipped. |
+| AAPL |  |  | Rate limit reached. Skipped. |
+| AMAT |  |  | Rate limit reached. Skipped. |
+| TSM |  |  | Rate limit reached. Skipped. |
+| VNET |  |  | Rate limit reached. Skipped. |
+| NVDA |  |  | Rate limit reached. Skipped. |
+| COHU |  |  | Rate limit reached. Skipped. |
+| SNPS |  |  | Rate limit reached. Skipped. |
+| VECO |  |  | Rate limit reached. Skipped. |
+| TEL |  |  | Rate limit reached. Skipped. |
+| MTSI |  |  | Rate limit reached. Skipped. |
+| UMC |  |  | Rate limit reached. Skipped. |
+| KLAC |  |  | Rate limit reached. Skipped. |
+| ASML |  |  | Rate limit reached. Skipped. |
+| GFS |  |  | Rate limit reached. Skipped. |
+| DOCN |  |  | Rate limit reached. Skipped. |
+| ASX |  |  | Rate limit reached. Skipped. |
+| MU |  |  | Rate limit reached. Skipped. |
+| ACLS |  |  | Rate limit reached. Skipped. |
+| INTC |  |  | Rate limit reached. Skipped. |
+| ARM |  |  | Rate limit reached. Skipped. |
+| ASYS |  |  | Rate limit reached. Skipped. |
+| APLD |  |  | Rate limit reached. Skipped. |
+| ICHR |  |  | Rate limit reached. Skipped. |
+| ANET |  |  | Rate limit reached. Skipped. |
+| CC |  |  | Rate limit reached. Skipped. |
+| NVMI |  |  | Rate limit reached. Skipped. |
+| LRCX |  |  | Rate limit reached. Skipped. |
+| SMTC |  |  | Rate limit reached. Skipped. |
+| TSEM |  |  | Rate limit reached. Skipped. |
+| FORM |  |  | Rate limit reached. Skipped. |
+| SYNA |  |  | Rate limit reached. Skipped. |
+| CAMT |  |  | Rate limit reached. Skipped. |
+| SITM |  |  | Rate limit reached. Skipped. |
+| WDC |  |  | Rate limit reached. Skipped. |
+| ON |  |  | Rate limit reached. Skipped. |
+| STX |  |  | Rate limit reached. Skipped. |
+| WDCX |  |  | Rate limit reached. Skipped. |
+| BTDR |  |  | Rate limit reached. Skipped. |

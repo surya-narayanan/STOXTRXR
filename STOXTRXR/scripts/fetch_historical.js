@@ -109,8 +109,9 @@ async function main() {
         rows.push({ ticker, date: result.date, close: result.close });
       }
     } catch (err) {
-      const message = err.message || "Unknown error";
-      if (message.includes("Thank you for using Alpha Vantage") || message.includes("API call frequency")) {
+      const rawMessage = err.message || "Unknown error";
+      const message = sanitizeMessage(rawMessage);
+      if (rawMessage.includes("Thank you for using Alpha Vantage") || rawMessage.includes("API call frequency") || rawMessage.includes("rate limit is")) {
         rateLimited = true;
         rows.push({ ticker, error: "Rate limit reached. Skipped." });
       } else {
@@ -136,6 +137,18 @@ async function main() {
 
   fs.writeFileSync(OUTPUT_FILE, lines.join("\n"), "utf8");
   console.log(`Wrote ${OUTPUT_FILE}`);
+}
+
+function sanitizeMessage(message) {
+  if (!message) return "Unknown error";
+  const redacted = message.replaceAll(AV_KEY, "[REDACTED]");
+  if (redacted.includes("rate limit") || redacted.includes("Thank you for using Alpha Vantage")) {
+    return "Rate limit reached.";
+  }
+  if (redacted.includes("Invalid API call")) {
+    return "Invalid API call.";
+  }
+  return redacted;
 }
 
 main().catch((err) => {
