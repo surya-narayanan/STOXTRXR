@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>STOXTRXR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Local Stock Tracker</p>
+          <h1>STOXTRXR</h1>
+          <p class="subhead">Track current price, historical price on a selected date, and next earnings. Click the earnings column to sort.</p>
+        </div>
+        <div class="date-box">
+          <label for="dateInput">Price on date</label>
+          <input id="dateInput" type="date" />
+          <p class="hint">If the date isn’t a trading day, we’ll use the previous trading day.</p>
+        </div>
+      </header>
+
+      <section class="controls">
+        <div class="ticker-input">
+          <label for="tickerInput">Add ticker</label>
+          <div class="row">
+            <input id="tickerInput" type="text" placeholder="AAPL" />
+            <button id="addBtn">Add</button>
+          </div>
+          <p class="hint">Use comma‑separated tickers to add many at once.</p>
+        </div>
+        <div class="actions">
+          <button id="refreshBtn" class="secondary">Refresh</button>
+        </div>
+      </section>
+
+      <p id="statusLine" class="status"></p>
+
+      <section class="table-wrap">
+        <table id="stocksTable">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Current Price</th>
+              <th>Price on Date</th>
+              <th id="earningsHeader" class="sortable">Next Earnings</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <footer class="footer">
+        <p>Data provided by Alpha Vantage. Local use only.</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
