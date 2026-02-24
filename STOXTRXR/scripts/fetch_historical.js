@@ -8,8 +8,8 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const AV_KEY = process.env.ALPHAVANTAGE_API_KEY;
-const AV_BASE = process.env.ALPHAVANTAGE_BASE || "https://www.alphavantage.co";
+const MASSIVE_KEY = process.env.MASSIVE_API_KEY;
+const MASSIVE_BASE = process.env.MASSIVE_BASE || "https://api.massive.com";
 const TARGET_DATE = "2025-11-01";
 const OUTPUT_FILE = path.join(__dirname, "..", "historical_prices_2025-11-01.md");
 
@@ -24,18 +24,9 @@ const TICKERS = [
   "TSEM", "FORM", "SYNA", "CAMT", "SITM", "WDC", "ON", "STX", "WDCX", "BTDR"
 ];
 
-const MIN_INTERVAL_MS = 1100;
+const MIN_INTERVAL_MS = 600;
 let nextAvailable = 0;
 let rateLimited = false;
-
-function avUrl(params) {
-  const url = new URL(`${AV_BASE}/query`);
-  for (const [key, value] of Object.entries(params)) {
-    url.searchParams.set(key, value);
-  }
-  url.searchParams.set("apikey", AV_KEY);
-  return url.toString();
-}
 
 async function throttle() {
   const now = Date.now();
@@ -46,50 +37,41 @@ async function throttle() {
   }
 }
 
-function throwIfAlphaVantageError(data) {
-  const note = data?.Note || data?.Information;
-  const err = data?.["Error Message"];
-  if (note) throw new Error(note);
-  if (err) throw new Error(err);
-}
-
-async function fetchSeries(ticker) {
+async function fetchAggs(ticker) {
   await throttle();
-  const url = avUrl({
-    function: "TIME_SERIES_DAILY",
-    symbol: ticker,
-    outputsize: "compact"
+  const fromDate = "2025-09-30";
+  const url = `${MASSIVE_BASE}/v2/aggs/ticker/${encodeURIComponent(ticker)}/range/1/day/${fromDate}/${TARGET_DATE}?adjusted=true&sort=asc&limit=5000`;
+  const res = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${MASSIVE_KEY}`
+    }
   });
-
-  const res = await fetch(url);
   if (!res.ok) {
     const text = await res.text();
     throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`);
   }
   const data = await res.json();
-  throwIfAlphaVantageError(data);
-
-  const series = data?.["Time Series (Daily)"];
-  if (!series || typeof series !== "object") {
-    return {};
-  }
-  return series;
+  const rows = data?.results || [];
+  return Array.isArray(rows) ? rows : [];
 }
 
-function selectOnOrBefore(series, targetDate) {
-  const dates = Object.keys(series).filter((d) => d <= targetDate).sort();
-  if (dates.length === 0) return null;
-  const date = dates[dates.length - 1];
-  const close = series[date]?.["4. close"];
-  return {
-    date,
-    close: close ? Number(close) : null
-  };
+function selectOnOrBefore(rows, targetDate) {
+  let best = null;
+  for (const row of rows) {
+    const rowDate = row?.t ? toISODate(new Date(row.t)) : null;
+    if (!rowDate) continue;
+    if (rowDate <= targetDate) {
+      if (!best || rowDate > best.date) {
+        best = { date: rowDate, close: row?.c ?? null };
+      }
+    }
+  }
+  return best;
 }
 
 async function main() {
-  if (!AV_KEY) {
-    console.error("Missing ALPHAVANTAGE_API_KEY in .env");
+  if (!MASSIVE_KEY) {
+    console.error("Missing MASSIVE_API_KEY in .env");
     process.exit(1);
   }
 
@@ -101,8 +83,8 @@ async function main() {
     }
 
     try {
-      const series = await fetchSeries(ticker);
-      const result = selectOnOrBefore(series, TARGET_DATE);
+      const rows = await fetchAggs(ticker);
+      const result = selectOnOrBefore(rows, TARGET_DATE);
       if (!result) {
         rows.push({ ticker, error: "No data before target date." });
       } else {
@@ -111,7 +93,7 @@ async function main() {
     } catch (err) {
       const rawMessage = err.message || "Unknown error";
       const message = sanitizeMessage(rawMessage);
-      if (rawMessage.includes("Thank you for using Alpha Vantage") || rawMessage.includes("API call frequency") || rawMessage.includes("rate limit is")) {
+      if (rawMessage.includes("rate limit") || rawMessage.includes("Too Many Requests")) {
         rateLimited = true;
         rows.push({ ticker, error: "Rate limit reached. Skipped." });
       } else {
@@ -141,14 +123,18 @@ async function main() {
 
 function sanitizeMessage(message) {
   if (!message) return "Unknown error";
-  const redacted = message.replaceAll(AV_KEY, "[REDACTED]");
-  if (redacted.includes("rate limit") || redacted.includes("Thank you for using Alpha Vantage")) {
+  const redacted = message.replaceAll(MASSIVE_KEY, "[REDACTED]");
+  if (redacted.includes("rate limit") || redacted.includes("Too Many Requests")) {
     return "Rate limit reached.";
   }
-  if (redacted.includes("Invalid API call")) {
-    return "Invalid API call.";
-  }
   return redacted;
+}
+
+function toISODate(d) {
+  const year = d.getUTCFullYear();
+  const month = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(d.getUTCDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 main().catch((err) => {

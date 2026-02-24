@@ -4,83 +4,73 @@ Nearest trading day on or before the target date is used.
 
 | Ticker | Date Used | Close Price | Error |
 | --- | --- | --- | --- |
-| LITX |  |  | Rate limit reached. Skipped. |
-| SMCI |  |  | Rate limit reached. Skipped. |
-| AAOI |  |  | Rate limit reached. Skipped. |
-| LITE |  |  | Rate limit reached. Skipped. |
-| NBIS |  |  | Rate limit reached. Skipped. |
-| SNXX |  |  | Rate limit reached. Skipped. |
-| TTMI |  |  | Rate limit reached. Skipped. |
-| AEHR |  |  | Rate limit reached. Skipped. |
-| AMKR |  |  | Rate limit reached. Skipped. |
-| SNDK |  |  | Rate limit reached. Skipped. |
-| SMSMTY |  |  | Rate limit reached. Skipped. |
-| EWY |  |  | Rate limit reached. Skipped. |
-| UCTT |  |  | Rate limit reached. Skipped. |
-| CIEN |  |  | Rate limit reached. Skipped. |
-| ALAB |  |  | Rate limit reached. Skipped. |
-| KLIC |  |  | Rate limit reached. Skipped. |
-| ORCL |  |  | Rate limit reached. Skipped. |
-| COHR |  |  | Rate limit reached. Skipped. |
-| AVGO |  |  | Rate limit reached. Skipped. |
-| APH |  |  | Rate limit reached. Skipped. |
-| CSCO |  |  | Rate limit reached. Skipped. |
-| GOOGL |  |  | Rate limit reached. Skipped. |
-| GOOG |  |  | Rate limit reached. Skipped. |
-| SERV |  |  | Rate limit reached. Skipped. |
-| ONTO |  |  | Rate limit reached. Skipped. |
-| AMD |  |  | Rate limit reached. Skipped. |
-| NET |  |  | Rate limit reached. Skipped. |
-| IREN |  |  | Rate limit reached. Skipped. |
-| SFTBY |  |  | Rate limit reached. Skipped. |
-| FN |  |  | Rate limit reached. Skipped. |
-| SKYT |  |  | Rate limit reached. Skipped. |
-| CRDO |  |  | Rate limit reached. Skipped. |
-| MBLY |  |  | Rate limit reached. Skipped. |
-| VRT |  |  | Rate limit reached. Skipped. |
-| AMZN |  |  | Rate limit reached. Skipped. |
-| ACMR |  |  | Rate limit reached. Skipped. |
-| TER |  |  | Rate limit reached. Skipped. |
-| DT |  |  | Rate limit reached. Skipped. |
-| CRWV |  |  | Rate limit reached. Skipped. |
-| TOELY |  |  | Rate limit reached. Skipped. |
-| KEYS |  |  | Rate limit reached. Skipped. |
-| ENTG |  |  | Rate limit reached. Skipped. |
-| AAPL |  |  | Rate limit reached. Skipped. |
-| AMAT |  |  | Rate limit reached. Skipped. |
-| TSM |  |  | Rate limit reached. Skipped. |
-| VNET |  |  | Rate limit reached. Skipped. |
-| NVDA |  |  | Rate limit reached. Skipped. |
-| COHU |  |  | Rate limit reached. Skipped. |
-| SNPS |  |  | Rate limit reached. Skipped. |
-| VECO |  |  | Rate limit reached. Skipped. |
-| TEL |  |  | Rate limit reached. Skipped. |
-| MTSI |  |  | Rate limit reached. Skipped. |
-| UMC |  |  | Rate limit reached. Skipped. |
-| KLAC |  |  | Rate limit reached. Skipped. |
-| ASML |  |  | Rate limit reached. Skipped. |
-| GFS |  |  | Rate limit reached. Skipped. |
-| DOCN |  |  | Rate limit reached. Skipped. |
-| ASX |  |  | Rate limit reached. Skipped. |
-| MU |  |  | Rate limit reached. Skipped. |
-| ACLS |  |  | Rate limit reached. Skipped. |
-| INTC |  |  | Rate limit reached. Skipped. |
-| ARM |  |  | Rate limit reached. Skipped. |
-| ASYS |  |  | Rate limit reached. Skipped. |
-| APLD |  |  | Rate limit reached. Skipped. |
-| ICHR |  |  | Rate limit reached. Skipped. |
-| ANET |  |  | Rate limit reached. Skipped. |
-| CC |  |  | Rate limit reached. Skipped. |
-| NVMI |  |  | Rate limit reached. Skipped. |
-| LRCX |  |  | Rate limit reached. Skipped. |
-| SMTC |  |  | Rate limit reached. Skipped. |
-| TSEM |  |  | Rate limit reached. Skipped. |
-| FORM |  |  | Rate limit reached. Skipped. |
-| SYNA |  |  | Rate limit reached. Skipped. |
-| CAMT |  |  | Rate limit reached. Skipped. |
-| SITM |  |  | Rate limit reached. Skipped. |
-| WDC |  |  | Rate limit reached. Skipped. |
-| ON |  |  | Rate limit reached. Skipped. |
-| STX |  |  | Rate limit reached. Skipped. |
-| WDCX |  |  | Rate limit reached. Skipped. |
-| BTDR |  |  | Rate limit reached. Skipped. |
+| SNXX |  |  | HTTP 429: {"status":"ERROR","request_id":"40086fdaa8f01426d4f83a4c22c3e319","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| TTMI |  |  | HTTP 429: {"status":"ERROR","request_id":"47b5fb3f05d4ce459672cbaf529bae24","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| AEHR |  |  | HTTP 429: {"status":"ERROR","request_id":"56cc8701ef86bcb268cb5416d2f53297","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| AMKR |  |  | HTTP 429: {"status":"ERROR","request_id":"96f4ed4655133013c135acaed8b71e81","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SNDK |  |  | HTTP 429: {"status":"ERROR","request_id":"ecfdd2c26aff3d1cff78fa15675ed773","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SMSMTY |  |  | HTTP 429: {"status":"ERROR","request_id":"d0d8dc483779f1775ccdb4955891b8f2","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| EWY |  |  | HTTP 429: {"status":"ERROR","request_id":"b90fae1ab8965bdd49776e360b6fb233","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| UCTT |  |  | HTTP 429: {"status":"ERROR","request_id":"f9a87be4d92385c95ed1f4ac47067e68","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| CIEN |  |  | HTTP 429: {"status":"ERROR","request_id":"e198c28b0eddcf2a90ad8fbdf30606ac","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ALAB |  |  | HTTP 429: {"status":"ERROR","request_id":"f75869af0c0968956cd598b71558a7ce","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| KLIC |  |  | HTTP 429: {"status":"ERROR","request_id":"5dbff2c43d66297a76db68f3b6005c12","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ORCL |  |  | HTTP 429: {"status":"ERROR","request_id":"6f246c5b1a0d084336ae7e60e155e2d6","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| COHR |  |  | HTTP 429: {"status":"ERROR","request_id":"ec6ab1ff3d93342968e16a57742540d5","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| AVGO |  |  | HTTP 429: {"status":"ERROR","request_id":"868e5feaceb1d515d1109ba2cac06f2d","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| APH |  |  | HTTP 429: {"status":"ERROR","request_id":"7f6eb601146e18ecfd0fe366c48810b3","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| CSCO |  |  | HTTP 429: {"status":"ERROR","request_id":"ab07c5e98b40b34611042266ff24f2b0","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| GOOGL |  |  | HTTP 429: {"status":"ERROR","request_id":"7c64d0dcd8b24f5a53dc2b3590effec6","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| GOOG |  |  | HTTP 429: {"status":"ERROR","request_id":"5270a0bccc28037105896b8b39e35829","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SERV |  |  | HTTP 429: {"status":"ERROR","request_id":"8ac21c3be544c0f1fa0ab7ca7d2f0a2f","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ONTO |  |  | HTTP 429: {"status":"ERROR","request_id":"77bf73ef847f144afbc2995fe1111027","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| AMD |  |  | HTTP 429: {"status":"ERROR","request_id":"dff656ad9df3ffc023d020cca7320057","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| NET |  |  | HTTP 429: {"status":"ERROR","request_id":"bfaca8ad7f39373915e3b54a74e19686","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| IREN |  |  | HTTP 429: {"status":"ERROR","request_id":"ff3b9fe74ae5d412e8fe8aac7eacfec9","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SFTBY |  |  | HTTP 429: {"status":"ERROR","request_id":"24f5eb151a8893f8895a811b7c66e736","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| FN |  |  | HTTP 429: {"status":"ERROR","request_id":"2d13709a41885b4f95fc7ba45eb191de","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SKYT |  |  | HTTP 429: {"status":"ERROR","request_id":"fe5b1e46d6d69f466c1584e80936a493","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| CRDO |  |  | HTTP 429: {"status":"ERROR","request_id":"2d8099e273a31ec513cba68dbe5c1f7f","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| MBLY |  |  | HTTP 429: {"status":"ERROR","request_id":"df9bc317d3ed659ad5bef8e86f9e5e88","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| VRT |  |  | HTTP 429: {"status":"ERROR","request_id":"1538154fbcee66567922a9efb96c79df","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| AMZN |  |  | HTTP 429: {"status":"ERROR","request_id":"867a63a9498f77cdd1e761ec8039f2c3","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ACMR |  |  | HTTP 429: {"status":"ERROR","request_id":"5b9ad89e1a2f0d2512cbed08f09b37ca","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| TER |  |  | HTTP 429: {"status":"ERROR","request_id":"ee89cf7be280bb0fcb440620eb171959","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| DT |  |  | HTTP 429: {"status":"ERROR","request_id":"e624d4b478a3704fe30a521aaa71710f","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| CRWV |  |  | HTTP 429: {"status":"ERROR","request_id":"0ab287f65624f6d507d435149ee1f668","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| TOELY |  |  | HTTP 429: {"status":"ERROR","request_id":"b30a87af79699452943989c5319264c9","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| KEYS |  |  | HTTP 429: {"status":"ERROR","request_id":"7951c44d376ef2cf01fa2e453d857fdd","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ENTG |  |  | HTTP 429: {"status":"ERROR","request_id":"29d676ae831d8a6c7e6642ca1d7e2fa3","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| AAPL |  |  | HTTP 429: {"status":"ERROR","request_id":"9ce758b0a39e1a9ff057dd97a836bef1","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| AMAT |  |  | HTTP 429: {"status":"ERROR","request_id":"d1e82b43ce0964ddc3c81403526a762f","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| VECO |  |  | HTTP 429: {"status":"ERROR","request_id":"966e9aa163e3e31e3b7fb4ad2ec3ba0b","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| TEL |  |  | HTTP 429: {"status":"ERROR","request_id":"fd63c84d88d03040b7324b3d4ba48c64","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| MTSI |  |  | HTTP 429: {"status":"ERROR","request_id":"ff43d111144fdb89871a020e1980c5c1","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| UMC |  |  | HTTP 429: {"status":"ERROR","request_id":"f8c3dddd06076870051349b7639acf8f","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| KLAC |  |  | HTTP 429: {"status":"ERROR","request_id":"089397ea17e57294a4177df47a1f6fe2","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ASML |  |  | HTTP 429: {"status":"ERROR","request_id":"f766a7e39afb63157f13d2339d4680f8","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| GFS |  |  | HTTP 429: {"status":"ERROR","request_id":"8ff1e7fdf07d8478f6cc7a402fd7f285","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| DOCN |  |  | HTTP 429: {"status":"ERROR","request_id":"d024edf8d2b746f4e57d8bc8f7431cb3","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ASX |  |  | HTTP 429: {"status":"ERROR","request_id":"448af617833ae7f14e5201a7f60447bf","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| MU |  |  | HTTP 429: {"status":"ERROR","request_id":"94d0ebf8531f7e126634cc760d500815","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ACLS |  |  | HTTP 429: {"status":"ERROR","request_id":"0c815b290baefe5886d3faddd7db8b72","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| INTC |  |  | HTTP 429: {"status":"ERROR","request_id":"293c782f001fbf9e14bf3b6d9e15d5fb","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ARM |  |  | HTTP 429: {"status":"ERROR","request_id":"398b04dbb2a596881f66c5dbab1aaa50","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ASYS |  |  | HTTP 429: {"status":"ERROR","request_id":"92a5ee237c67919c8da1ca49937b5438","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| APLD |  |  | HTTP 429: {"status":"ERROR","request_id":"18a9deba6f10ce77f9ee8aa78154b3da","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ICHR |  |  | HTTP 429: {"status":"ERROR","request_id":"a7d7740c565013dfda3eeff4ac38bc6d","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ANET |  |  | HTTP 429: {"status":"ERROR","request_id":"0c3bb6ce23b77f288cb7b03f753ed490","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| CC |  |  | HTTP 429: {"status":"ERROR","request_id":"dcaf36b64ff1b0275a006efc07d9333f","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| NVMI |  |  | HTTP 429: {"status":"ERROR","request_id":"1d096648980f269cd604dace0394588e","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| LRCX |  |  | HTTP 429: {"status":"ERROR","request_id":"31f052a44356921c2d0fd6b356783e68","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SMTC |  |  | HTTP 429: {"status":"ERROR","request_id":"2752ae9bfee4856318d8f9772b0eed81","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| TSEM |  |  | HTTP 429: {"status":"ERROR","request_id":"304f5c986fa6ed5eac19855f6ebcc30c","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| FORM |  |  | HTTP 429: {"status":"ERROR","request_id":"0d7fe5acb1a31c92e383522d6565e9a3","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SYNA |  |  | HTTP 429: {"status":"ERROR","request_id":"93735ca1a4bcb845605bfbb4734683d4","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| CAMT |  |  | HTTP 429: {"status":"ERROR","request_id":"ccb2ba0de015f66164af8c3ac64c4784","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| SITM |  |  | HTTP 429: {"status":"ERROR","request_id":"b18f44c8a08eb24067718a8cfb81ffc3","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| WDC |  |  | HTTP 429: {"status":"ERROR","request_id":"b8ef57607bbf4f235e6ee3e1e464c9fd","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| ON |  |  | HTTP 429: {"status":"ERROR","request_id":"a26fa356253db5c08e1917e579233593","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| STX |  |  | HTTP 429: {"status":"ERROR","request_id":"e6ce5bb9eb10462ee258647ff5b8c635","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| WDCX |  |  | HTTP 429: {"status":"ERROR","request_id":"505d8519a611646534dde5c8a31f32e4","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |
+| BTDR |  |  | HTTP 429: {"status":"ERROR","request_id":"719f2c50889fe643698bb589431e46bc","error":"You've exceeded the maximum requests per minute, please wait or upgrade your subscription to continue. https://massive.com/pr |

@@ -18,7 +18,11 @@ Local web app to track current price, historical price on a selected date, and n
    ```
    ALPHAVANTAGE_API_KEY=YOUR_KEY
    ```
-3. Install and run:
+3. Add your Massive key:
+   ```
+   MASSIVE_API_KEY=YOUR_KEY
+   ```
+4. Install and run:
    ```bash
    npm install
    npm start
@@ -31,8 +35,8 @@ On load, the app:
 - Loads the default ticker list defined in `/Users/surya/Documents/New project/STOXTRXR/public/app.js`.
 
 ## Notes
-- Alpha Vantage free tier has strict rate limits. If you add many tickers at once, some rows may show missing data.
-- The "current price" is the latest daily close from Alpha Vantage.
+- Alpha Vantage free tier has strict rate limits for earnings. If you add many tickers at once, some earnings rows may show missing data.
+- Prices come from Massive aggregate endpoints (free-tier friendly).
 
 ## Snapshot file
 A one-time historical snapshot is stored in:
@@ -42,3 +46,5 @@ To regenerate it:
 ```bash
 node /Users/surya/Documents/New project/STOXTRXR/scripts/fetch_historical.js
 ```
+
+The snapshot uses Massive aggregate endpoints for historical prices.

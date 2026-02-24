@@ -12,6 +12,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const AV_KEY = process.env.ALPHAVANTAGE_API_KEY;
 const AV_BASE = process.env.ALPHAVANTAGE_BASE || "https://www.alphavantage.co";
+const MASSIVE_KEY = process.env.MASSIVE_API_KEY;
+const MASSIVE_BASE = process.env.MASSIVE_BASE || "https://api.massive.com";
 const AV_MIN_INTERVAL_MS = 1100;
 let avNextAvailable = 0;
 
@@ -21,6 +23,10 @@ app.use(express.static(path.join(__dirname, "public")));
 function requireKey(req, res) {
   if (!AV_KEY) {
     res.status(500).json({ error: "Missing ALPHAVANTAGE_API_KEY in .env" });
+    return false;
+  }
+  if (!MASSIVE_KEY) {
+    res.status(500).json({ error: "Missing MASSIVE_API_KEY in .env" });
     return false;
   }
   return true;
@@ -66,6 +72,59 @@ function avUrl(params) {
   }
   url.searchParams.set("apikey", AV_KEY);
   return url.toString();
+}
+
+async function fetchMassiveJson(url) {
+  const headers = {
+    Authorization: `Bearer ${MASSIVE_KEY}`
+  };
+  return fetchWithRetry(url, { headers });
+}
+
+async function fetchWithRetry(url, options, retries = 3) {
+  let attempt = 0;
+  while (true) {
+    try {
+      const res = await fetch(url, options);
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`HTTP ${res.status} for ${url}: ${text.slice(0, 200)}`);
+      }
+      return res.json();
+    } catch (err) {
+      attempt += 1;
+      if (attempt > retries) throw err;
+      const backoff = 300 * Math.pow(2, attempt - 1);
+      await new Promise((resolve) => setTimeout(resolve, backoff));
+    }
+  }
+}
+
+async function getMassivePrevClose(ticker) {
+  const url = `${MASSIVE_BASE}/v2/aggs/ticker/${encodeURIComponent(ticker)}/prev`;
+  const data = await fetchMassiveJson(url);
+  const row = data?.results?.[0];
+  return row?.c ?? null;
+}
+
+async function getMassiveHistoricalOnOrBefore(ticker, targetDate) {
+  const fromDate = addDays(targetDate, -30);
+  const url = `${MASSIVE_BASE}/v2/aggs/ticker/${encodeURIComponent(ticker)}/range/1/day/${fromDate}/${targetDate}?adjusted=true&sort=asc&limit=5000`;
+  const data = await fetchMassiveJson(url);
+  const rows = data?.results || [];
+  if (!Array.isArray(rows) || rows.length === 0) return null;
+
+  let best = null;
+  for (const row of rows) {
+    const rowDate = row?.t ? toISODate(new Date(row.t)) : null;
+    if (!rowDate) continue;
+    if (rowDate <= targetDate) {
+      if (!best || rowDate > best.date) {
+        best = { date: rowDate, close: row?.c ?? null };
+      }
+    }
+  }
+  return best;
 }
 
 function getCurrentFromSeries(series) {
@@ -212,20 +271,31 @@ app.get("/api/health", (req, res) => {
       error: "Missing ALPHAVANTAGE_API_KEY in .env"
     });
   }
+  if (!MASSIVE_KEY) {
+    return res.json({
+      ok: false,
+      error: "Missing MASSIVE_API_KEY in .env"
+    });
+  }
 
   const ticker = String(req.query.ticker || "AAPL").toUpperCase();
   const date = String(req.query.date || toISODate(new Date()));
 
   Promise.allSettled([
-    getDailySeries(ticker),
+    getMassivePrevClose(ticker),
+    getMassiveHistoricalOnOrBefore(ticker, date),
     getNextEarningsDate(ticker)
   ]).then((results) => {
-    const [seriesRes, earnRes] = results;
+    const [prevRes, histRes, earnRes] = results;
 
     const checks = {
-      series: {
-        ok: seriesRes.status === "fulfilled" && seriesRes.value && Object.keys(seriesRes.value).length > 0,
-        error: seriesRes.status === "rejected" ? seriesRes.reason?.message : null
+      prev: {
+        ok: prevRes.status === "fulfilled" && prevRes.value !== null,
+        error: prevRes.status === "rejected" ? prevRes.reason?.message : null
+      },
+      history: {
+        ok: histRes.status === "fulfilled" && histRes.value !== null,
+        error: histRes.status === "rejected" ? histRes.reason?.message : null
       },
       earnings: {
         ok: earnRes.status === "fulfilled" && earnRes.value !== null,
@@ -233,7 +303,7 @@ app.get("/api/health", (req, res) => {
       }
     };
 
-    const ok = checks.series.ok && checks.earnings.ok;
+    const ok = checks.prev.ok && checks.history.ok && checks.earnings.ok;
     res.json({ ok, ticker, date, checks });
   });
 });
@@ -255,9 +325,8 @@ app.post("/api/rows", async (req, res) => {
       const ticker = String(raw).trim().toUpperCase();
       if (!ticker) continue;
 
-      const series = await safeCall(() => getDailySeries(ticker));
-      const quote = series.value ? { value: getCurrentFromSeries(series.value), error: null } : { value: null, error: series.error };
-      const hist = series.value ? { value: getHistoricalFromSeries(series.value, date), error: null } : { value: null, error: series.error };
+      const quote = await safeCall(() => getMassivePrevClose(ticker));
+      const hist = await safeCall(() => getMassiveHistoricalOnOrBefore(ticker, date));
       const earnings = await safeCall(() => getNextEarningsDate(ticker));
 
       results.push({
